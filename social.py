@@ -21,7 +21,12 @@ def show_info():
         st.markdown("Phone: **not provided**")
     else:
         st.markdown('Phone: <a href="tel:' + phone + '">' + phone + '</a>', True)
-    st.text(query_params['email'][0])
+    email = query_params['email'][0]
+    if email == "null":
+        st.markdown("Email: **not provided**")
+    else:
+        st.markdown('Email: <a href="mailto:' + email + '">' + email + '</a>', True)
+
 
     st.header("Socials")
     st.subheader("Add any if possible")
