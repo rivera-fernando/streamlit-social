@@ -66,7 +66,7 @@ def create_code():
     #make a ton of fields
     #use the info in those fields to make the link,
     #then make the qr code from the link
-    link = ("http://localhost:8501/" +
+    link = ("https://share.streamlit.io/rivera-fernando/streamlit-social/main/social.py/" +
                                     "?name=" + name +
                                     "&phone=" + phone +
                                     "&email=" + email +
