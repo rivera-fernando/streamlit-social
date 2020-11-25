@@ -77,12 +77,12 @@ def create_code():
                                     "&github=" + github +
                                     "&web=" + website)
     link = link.replace(" ", "%20")
-    st.write(link)
-    img = qrcode.make(link)
-    bytes = io.BytesIO()
-    img.save(bytes, format='PNG')
-    bytes = bytes.getvalue()
-    st.image(bytes)
+    if st.button("Make my QR Code!"):
+        img = qrcode.make(link)
+        bytes = io.BytesIO()
+        img.save(bytes, format='PNG')
+        bytes = bytes.getvalue()
+        st.image(bytes, "personal code", 200)
 
 query_params = st.experimental_get_query_params()
 if query_params == {}:
