@@ -82,7 +82,7 @@ def create_code():
         bytes = io.BytesIO()
         img.save(bytes, format='PNG')
         bytes = bytes.getvalue()
-        st.image(bytes, "personal code", 200)
+        st.image(bytes, "personal code", 300)
 
 query_params = st.experimental_get_query_params()
 if query_params == {}:
