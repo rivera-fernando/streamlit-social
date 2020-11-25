@@ -21,11 +21,24 @@ def show_info():
 
     st.header("Socials")
     st.subheader("Add any if possible")
-    st.text(query_params['insta'][0])
-    st.text(query_params['snap'][0])
-    st.text(query_params['fb'][0])
-
+    insta = query_params['insta'][0]
+    if insta == "null":
+        st.markdown("Instagram: **not provided**")
+    else:
+        st.markdown("Instagram: ["+insta+"](" + "https://www.instagram.com/" + insta +")")
+    snap = query_params['snap'][0]
+    if snap == "null":
+        st.markdown("Snapchat: **not provided**")
+    else:
+        st.markdown("Snapchat: ["+snap+"](" + "https://www.snapchat.com/add/" + snap +")")
+    fb = query_params['fb'][0]
+    if fb == "null":
+        st.markdown("Facebook: **not provided**")
+    else:
+        st.markdown("Facebook: ["+fb+"](" + "https://www.facebook.com/profile.php?id=" + fb +")")
     st.header("Professional")
+
+
     st.text(query_params['linked'][0])
     st.text(query_params['github'][0])
     st.text(query_params['web'][0])
@@ -86,6 +99,7 @@ def create_code():
                                     "&web=" + website)
     link = link.replace(" ", "%20")
     if st.button("Make my QR Code!"):
+        st.write(link)
         img = qrcode.make(link)
         bytes = io.BytesIO()
         img.save(bytes, format='PNG')
