@@ -36,10 +36,14 @@ def show_info():
         st.markdown("Facebook: **not provided**")
     else:
         st.markdown("Facebook: ["+fb+"](" + "https://www.facebook.com/profile.php?id=" + fb +")")
+
+
     st.header("Professional")
-
-
-    st.text(query_params['linked'][0])
+    linked = query_params['linked'][0]
+    if linked == "null":
+        st.markdown("LinkedIn: **not provided**")
+    else:
+        st.markdown("LinkedIn: ["+linked+"](" + "https://www.linkedin.com/in/" + linked +")")
     st.text(query_params['github'][0])
     st.text(query_params['web'][0])
 
