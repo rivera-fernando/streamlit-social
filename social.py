@@ -49,7 +49,11 @@ def show_info():
         st.markdown("GitHub: **not provided**")
     else:
         st.markdown("GitHub: ["+git+"](" + "https://www.github.com/" + git +")")
-    st.text(query_params['web'][0])
+    web = query_params['web'][0]
+    if web == "null":
+        st.markdown("Website: **not provided**")
+    else:
+        st.markdown("Website: ["+web+"](" + web +")")
 
 
 def create_code():
