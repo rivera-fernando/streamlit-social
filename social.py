@@ -40,13 +40,13 @@ def create_code():
 
     st.subheader("Socials")
     left2, middle2, right2 = st.beta_columns(3)
-    insta = left2.text_input("Instagram")
+    insta = left2.text_input("Instagram Username")
     if insta == "":
         insta = "null"
-    snap = middle2.text_input("Snapchat")
+    snap = middle2.text_input("Snapchat Username")
     if snap == "":
         snap = "null"
-    fb = right2.text_input("Facebook")
+    fb = right2.text_input("Facebook Personal ID")
     if fb == "":
         fb = "null"
 
@@ -54,10 +54,10 @@ def create_code():
 
     st.subheader("Professional")
     left3, middle3, right3 = st.beta_columns(3)
-    linkedin = left3.text_input("LinkedIn")
+    linkedin = left3.text_input("LinkedIn URL Ending")
     if linkedin == "":
         linkedin = "null"
-    github = middle3.text_input("Github")
+    github = middle3.text_input("Github Username")
     if github == "":
         github = "null"
     website = right3.text_input("Personal Website")
