@@ -44,7 +44,11 @@ def show_info():
         st.markdown("LinkedIn: **not provided**")
     else:
         st.markdown("LinkedIn: ["+linked+"](" + "https://www.linkedin.com/in/" + linked +")")
-    st.text(query_params['github'][0])
+    git = query_params['github'][0]
+    if git == "null":
+        st.markdown("GitHub: **not provided**")
+    else:
+        st.markdown("GitHub: ["+git+"](" + "https://www.github.com/" + git +")")
     st.text(query_params['web'][0])
 
 
