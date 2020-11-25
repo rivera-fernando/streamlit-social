@@ -111,7 +111,6 @@ def create_code():
                                     "&web=" + website)
     link = link.replace(" ", "%20")
     if st.button("Make my QR Code!"):
-        st.write(link)
         img = qrcode.make(link)
         bytes = io.BytesIO()
         img.save(bytes, format='PNG')
