@@ -4,6 +4,14 @@ import qrcode.image.svg
 import io
 
 def show_info():
+    st.sidebar.title('Hey there!')
+    st.sidebar.header('Quick webpage info')
+    explanation = st.sidebar.beta_expander("What's the point?", True)
+    explanation.write("In college, there are a lot of opportunities to meet a ridiculous amount of people. In this day and age, asking them for all their social media @'s is potentially very awkard. They might not want to give you their Snapchat, or maybe their username is too complicated to catch in a setting where you're surrounded by new people. This website creates standardized QR codes to easily get the information they're comfortable giving out!")
+    how = st.sidebar.beta_expander("How does it work?", True)
+    how.markdown("""There are two use-cases for this website.
+    \nFirst, you just met someone and they have a QR code generated with us. In this case, you would scan the code using your phones camera, and then have access to whatever information they decided to add to their code. You will be able to easily follow them on their social medias!
+    \nSecond, you want to generate a QR code with us. In this case, you simply go to the [homepage](https://share.streamlit.io/rivera-fernando/streamlit-social/main/social.py), fill out the fields and generate your code, which you can download easily.""")
     st.title("You just scanned a new friend!")
     st.header("Basic info")
     query_params = st.experimental_get_query_params()
