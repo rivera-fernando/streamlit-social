@@ -16,7 +16,11 @@ def show_info():
     st.header("Basic info")
     query_params = st.experimental_get_query_params()
     st.text(query_params['name'][0])
-    st.text(query_params['phone'][0])
+    phone = query_params['phone'][0]
+    if phone == "null":
+        st.markdown("Phone: **not provided**")
+    else:
+        st.markdown("Phone: ["+phone+"]("+ phone +")")
     st.text(query_params['email'][0])
 
     st.header("Socials")
@@ -82,6 +86,9 @@ def create_code():
     fb = right2.text_input("Facebook Personal ID")
     if fb == "":
         fb = "null"
+    elif "http" in fb or "com" in fb:
+        st.warning("Don't include anything other than your Facebook page ID please!")
+        st.stop()
 
 
 
@@ -90,12 +97,18 @@ def create_code():
     linkedin = left3.text_input("LinkedIn URL Ending")
     if linkedin == "":
         linkedin = "null"
+    elif "http" in linkedin or ".com" in linkedin:
+        st.warning("Don't include anything other than your custom LinkedIn URL ending please!")
+        st.stop()
     github = middle3.text_input("Github Username")
     if github == "":
         github = "null"
     website = right3.text_input("Personal Website")
     if website == "":
         website = "null"
+    elif "http" in website:
+        st.warning("Don't include `https://` please!")
+        st.stop()
     #make a ton of fields
     #use the info in those fields to make the link,
     #then make the qr code from the link
