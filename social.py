@@ -53,7 +53,7 @@ def show_info():
     if web == "null":
         st.markdown("Website: **not provided**")
     else:
-        st.markdown("Website: ["+web+"](" + web +")")
+        st.markdown("Website: ["+web+"](" + "https://" + web +")")
 
 
 def create_code():
